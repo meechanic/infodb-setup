@@ -10,7 +10,7 @@ if [ -z "$FSN" ]
   then export FSN=""
 fi
 if [ ! -z "$MIGRATE" ]
-  then "$APPPATH"/manage.py makemigrations && "$APPPATH"/manage.py migrate
+  then "$APPPATH"/manage.py makemigrations && "$APPPATH"/manage.py migrate && "$APPPATH"/manage.py makemigrations base && "$APPPATH"/manage.py migrate base
 fi
 if [ ! -z "$CREATE_SUPERUSER" ]
   then if [ -z "$DJANGO_SUPERUSER_PASSWORD" ]
